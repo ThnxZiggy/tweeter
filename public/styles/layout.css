@@ -19,7 +19,7 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-
+  
   font-family: 'Source Sans Pro', sans-serif;
   
 }
@@ -30,4 +30,20 @@ body {
 
 nav {
   font-family: 'Bungee', cursive, sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  background-color: #f4f1ec;
+}
+
+.new-tweet {
+  /* display: flex;
+  justify-content: space-evenly; */
+  margin: 0.9em
+}
+
+.example {
+  margin: 0.9em
 }
