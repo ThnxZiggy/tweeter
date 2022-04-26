@@ -37,13 +37,3 @@ main {
   justify-content: center;
   background-color: #f4f1ec;
 }
-
-.new-tweet {
-  /* display: flex;
-  justify-content: space-evenly; */
-  margin: 0.9em
-}
-
-.example {
-  margin: 0.9em
-}
