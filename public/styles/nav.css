@@ -14,6 +14,9 @@ nav {
   z-index:100;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 span {
@@ -27,9 +30,10 @@ span {
   font-family: 'Source Sans Pro', light, sans-serif;
 }
 
-i {
+.icon {
   display: flex;
   color:#FF0000;
-  align-self: stretch;
+  justify-content:center;
+
   size: 0.75em;
 }
