@@ -20,52 +20,76 @@
     <link rel="navigation stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="header stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="new tweet stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="tweet container stylesheet" href="/styles/tweet-container.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/compose-char-counter.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div class="write">Write a new tweet
+      <div class="write"><strong>Write</strong> a new tweet
         <div class="icon">
           <i class="fa-solid fa-angles-down"></i>
         </div>
       </div>
     
     </nav>
-    <header class ="top-header">
+    <header class="top-header">
       <div>
-          <img src="/images/profile-hex.png"> 
+        <img src="/images/profile-hex.png">
       </div>
       <br>
       <div>
-          <h2 class="username">Ziggy</h2>
+        <h2 class="username">Ziggy</h2>
       </div>
-  </header>
+    </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form>
-        <div class="create-tweet">
-        <label class="tweet-title" for="tweet-text">What are you humming about?</label>
-        <textarea class="text-box" name="text" id="tweet-text" placeholder="'Insert Tweet Here'"></textarea>
-        </div>
-        <div class="submission">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-    <p class="example">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, vitae. Facilis voluptatum cumque voluptates perferendis rem! Quae deserunt doloremque, quisquam, voluptas quod, ducimus totam corrupti quasi perferendis quas molestiae vero!</p>
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form>
+          <div class="create-tweet">
+            <label class="tweet-title" for="tweet-text">What are you humming about?</label>
+            <textarea class="text-box" name="text" id="tweet-text" placeholder="'Insert Tweet Here'"></textarea>
+          </div>
+          <div class="submission">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <section class="tweet-container">
+        <article class="tweet">
+          <header>
+            <div id="username">Newton</div>
+            <div id="handle">@SirIsaac</div>
+          </header>
+          <h4>
+            <p class="tweet-body">
+              Hello World! this is my first tweet!
+            </p>
+          </h4>
+          <footer>
+            <div id="date-posted">10 days ago</div>
+            <div id="share"> <i>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-retweet"></i>
+                <i class="fa-solid fa-flag"></i></i>
+            </div>
+          </footer>
+        </article>
+      </section>
+      <p class="example">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, vitae. Facilis voluptatum cumque
+        voluptates perferendis rem! Quae deserunt doloremque, quisquam, voluptas quod, ducimus totam corrupti quasi
+        perferendis quas molestiae vero!</p>
+    </main>
   </body>
-      <!-- App JS -->
-      <script type="text/javascript" src="/scripts/client.js"></script>
-      <script type="text/javascript" src="/scripts/compose-char-counter.js"></script>
 </html>

@@ -36,6 +36,7 @@ button {
   border-right-width: 0;
   background-color: transparent;
   resize: none;
+  padding: 0 0.9em;
   /* border-color: #000000;
   border-bottom: thick; */
   
