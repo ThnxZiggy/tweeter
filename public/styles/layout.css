@@ -19,9 +19,9 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  
+  display: flex;
   font-family: 'Source Sans Pro', sans-serif;
-  
+  flex-direction: column;
 }
 
 /*
@@ -40,3 +40,4 @@ main {
   /* width: 90% */
   margin: 0.9em;
 }
+

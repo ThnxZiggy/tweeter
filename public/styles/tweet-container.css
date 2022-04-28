@@ -78,7 +78,7 @@ p {
   font-size: medium;
 }
 
-#share:hover {
+.share:hover {
   color:red
 }
 
