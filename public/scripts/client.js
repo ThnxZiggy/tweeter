@@ -103,10 +103,61 @@ const renderTweets = function (data) {
 
 }
 
-
-
 $(document).ready(function () {
   const $tweet2 = renderTweets(data);
 $('.tweet-container').prepend($tweet2);
+$( "form" ).submit(function( event ) {
+  console.log(event.target)
+  event.preventDefault();
+  let dataString = $(this).serialize();
+  console.log(dataString);
+
+  
+//do form validation before this ajax POST
+  $.ajax({
+    type: 'POST',
+    url: '/tweets',
+    data: dataString,
+  }).then (function () {
+
+  })
+  if ( $( "input" ).first().val() === "correct" ) {
+    $( "span" ).text( "Validated..." ).show();
+    return;
+  }
+ 
+  $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
+
+});
 });
 
+
+
+
+// $( "form" ).on( "submit", function(e) {
+ 
+//     var dataString = $(this).serialize();
+     
+//     // alert(dataString); return false;
+ 
+//     $.ajax({
+//       type: "POST",
+//       url: "bin/process.php",
+//       data: dataString,
+//       success: function () {
+//         $("#contact_form").html("<div id='message'></div>");
+//         $("#message")
+//           .html("<h2>Contact Form Submitted!</h2>")
+//           .append("<p>We will be in touch soon.</p>")
+//           .hide()
+//           .fadeIn(1500, function () {
+//             $("#message").append(
+//               "<img id='checkmark' src='images/check.png' />"
+//             );
+//           });
+//       }
+//     });
+ 
+//     e.preventDefault();
+//   });
+// });
