@@ -29,7 +29,15 @@ article.tweet header {
   flex-direction: row;
   justify-content: space-between;
   margin: 0.9em;
-  padding: 0 0.9em
+}
+
+.leftside {
+  display: flex;
+
+}
+
+p.username {
+  color:#545149;
 }
 
 article.tweet footer {
@@ -68,10 +76,12 @@ p {
 }
 
 
-#handle {
+.handle {
   color: rgba(36, 111, 215, 0.714);
   opacity: 0.35;
   font-weight: 600;
+  display: flex;
+
 }
 
 #date-posted {
