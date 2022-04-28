@@ -41,21 +41,21 @@ const data = [
   },
   {
     "user": {
-      "name": "Tonald Drump",
+      "name": "guy from the future",
       "avatars": "http://icons.iconseeker.com/png/64/naruto-vol-1/uzumaki-naruto.png",
-      "handle": "@theRealPrezi" },
+      "handle": "@futureTrunks" },
     "content": {
-      "text": "I have the best tweeter feed, the best!"
+      "text": "Invest in Ziggy's company"
     },
     "created_at": 111111111390000
   }
 ];
 
 //HTML safe function
-const escape = function (str) {
-  let $div = document.createElement("div");
-  $div.appendChild(document.createTextNode(str));
-  return $div.innerHTML;
+const safeHTML = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 };
 
 const createTweetElement = function (tweetObj) {
@@ -69,7 +69,7 @@ const createTweetElement = function (tweetObj) {
   </header>
   <h4>
   <p class="tweet-body">
-    ${escape(tweetObj.content.text)}
+    ${safeHTML(tweetObj.content.text)}
   </p>
   </h4>
   <footer>
@@ -85,11 +85,11 @@ const createTweetElement = function (tweetObj) {
 
 };
 
-const $tweet = createTweetElement(tweetData); // calling the function by assigning function to a variable
+// const $tweet = createTweetElement(tweetData); // calling the function by assigning function to a variable
 
-$(document).ready(function () {
-  $('.tweet-container').append($tweet);  //on document ready, add the function + data (as a variable) to the tweet container section
-});
+// $(document).ready(function () {
+//   $('.tweet-container').append($tweet);  //on document ready, add the function + data (as a variable) to the tweet container section
+// });
 
 
 
@@ -103,9 +103,10 @@ const renderTweets = function (data) {
 
 }
 
-const $tweet2 = renderTweets(data);
+
 
 $(document).ready(function () {
+  const $tweet2 = renderTweets(data);
 $('.tweet-container').prepend($tweet2);
 });
 
