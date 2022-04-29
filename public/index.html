@@ -56,8 +56,10 @@
     <main class="container">
       <section class="new-tweet">
         <span2></span2>
+        <div class="errorMsg" id="error-Msg">This is an error message</div>
         <h2>Compose Tweet</h2>
         <form id="form">
+          
           <div class="create-tweet">
             <label class="tweet-title" for="tweet-text">What are you humming about?</label>
             <textarea class="text-box" name="text" id="tweet-text" placeholder="'Insert Tweet Here'"></textarea>
@@ -66,6 +68,7 @@
             <button type="submit" id="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
+        
         </form>
       </section>
       <section class="tweet-container"></section>

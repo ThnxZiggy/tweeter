@@ -47,36 +47,6 @@ const renderTweets = function (data) {
   return renderTweet;
 };
 
-$(document).ready(function () {
-  loadTweets();
-  $("#form").submit(function (event) {
-    const $plainText = $(this).children('div:first-child').children('textarea')
-    const characCounter = $plainText.val();
-    if (characCounter.length > 140 || characCounter === '') {
-      return alert('text too long or no text')
-    } 
-    event.preventDefault();
-    let dataString = $(this).serialize();
-
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: dataString,
-      success: {success: "this is working now"},
-    })
-      .then(function () {
-        // location.reload();
-        //dont use .reload instead research jquery.load()
-        // $('.tweet-container').empty();
-        loadTweets();
-      })
-      .catch((error) => {
-        console.log('this is the error: ', error);
-      });
-  });
-  return false;
-});
-
 const loadTweets = function () {
   $.ajax({
     type: "GET",
@@ -84,10 +54,52 @@ const loadTweets = function () {
   }).then(function (ziggy) {
     $('.tweet-container').empty();
     $(".tweet-container").prepend(renderTweets(ziggy));
-    $('.text-box').val('').empty();
-    $('.counter').val(140).trigger("reset");
+
   });
 };
+
+//generate page
+$(document).ready(function () {
+  loadTweets();
+  //hide error message
+  $('#error-Msg').hide();
+  $("#form").submit(function (event) {
+    event.preventDefault();
+    const characCounter = $('#tweet-text').val();
+    //tweet validation
+    if (characCounter === '') {
+      $('#error-Msg').text('Cannot tweet empty string').slideDown();
+    } else if (characCounter.length > 140) {
+       $('#error-Msg').text('Tweet is too long').slideDown();
+      return false;
+    } 
+    //store tweet as a string
+    let dataString = $(this).serialize();
+    //sending tweet data to /tweets object
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: dataString,
+      success: {success: "this is working now"},
+    })
+      //removing error msg (if applicable)
+      //reset box and counter
+      //generate tweet
+      .then(function () {
+        $('#error-Msg').slideUp();
+        $('.text-box').val('').empty();
+        $('.counter').val(140).trigger("reset");
+        loadTweets();
+      })
+      .catch((error) => {
+        console.log('this is the error: ', error);
+      });
+  });
+
+  return false;
+});
+
+
 
 // if ( $( "input" ).first().val()) {
 //   $( "span" ).text( "Validated..." ).show();
