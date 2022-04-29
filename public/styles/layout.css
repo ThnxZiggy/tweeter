@@ -22,6 +22,7 @@ body {
   display: flex;
   font-family: 'Source Sans Pro', sans-serif;
   flex-direction: column;
+
 }
 
 /*
@@ -39,5 +40,21 @@ main {
   flex-direction: column;
   /* width: 90% */
   margin: 0.9em;
+  inline-size: auto;
 }
 
+@media (min-width: 1024px) {
+  #header-and-body {
+    display: flex;
+    flex-direction: row;
+    resize: both;
+    overflow:auto;
+    margin: 0.9em;
+    inline-size: auto;
+    justify-content: space-between;
+  }
+  main {
+    margin-top: 120px;
+  }
+
+}

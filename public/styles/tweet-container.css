@@ -4,7 +4,8 @@
   border-width: thick;
   border-style: solid;
   background-color: transparent;
-  resize: none;
+  resize: both;
+  inline-size: auto;
 
 }
 
@@ -64,10 +65,10 @@ h4 {
   border-left-width: 0;
   border-right-width: 0;
   background-color: transparent;
-  /* resize: none; */
+  word-wrap: break-word;
   margin: 0.9em;
   padding: 0 0.9em;
-  /* align-items: flex-end; */
+  inline-size: auto;
 }
 
 p {
@@ -88,10 +89,11 @@ p {
   font-size: medium;
 }
 
-.share:hover {
-  color:red
+.share > i:hover {
+  color:red;
+  cursor: pointer;
 }
 
-.tweet-container footer i [class*="fa"] {
+.share > i {
   padding: 0 0.25em;
 }

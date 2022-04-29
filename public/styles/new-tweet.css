@@ -47,3 +47,6 @@ button {
   opacity: 0.5;
 }
 
+.errorMsg {
+  color: red;
+}

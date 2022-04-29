@@ -27,10 +27,10 @@ const createTweetElement = function (tweetObj) {
   </h4>
   <footer>
   <div class="date-posted">${timeago.format(tweetObj.created_at)}</div>
-  <div class="share"> <i>
+  <div class="share">
       <i class="fa-solid fa-heart"></i>
       <i class="fa-solid fa-retweet"></i>
-      <i class="fa-solid fa-flag"></i></i>
+      <i class="fa-solid fa-flag"></i>
   </div>
   </footer>`;
   $newTweet.prepend($tweetContent);
@@ -68,9 +68,9 @@ $(document).ready(function () {
     const characCounter = $('#tweet-text').val();
     //tweet validation
     if (characCounter === '') {
-      $('#error-Msg').text('Cannot tweet empty string').slideDown();
+      $('#error-Msg').text('🚨🚨🚨Cannot🚨tweet🚨empty🚨string🚨🚨🚨').slideDown();
     } else if (characCounter.length > 140) {
-       $('#error-Msg').text('Tweet is too long').slideDown();
+       $('#error-Msg').text('🚨🚨🚨Tweet🚨is🚨too🚨long🚨🚨🚨').slideDown();
       return false;
     } 
     //store tweet as a string

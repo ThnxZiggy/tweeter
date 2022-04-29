@@ -17,6 +17,7 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
+  
 }
 
 span {
@@ -36,4 +37,11 @@ span {
   justify-content:center;
 
   size: 0.75em;
+}
+
+@media all {
+  nav {
+    top: sticky;
+  }
+
 }
