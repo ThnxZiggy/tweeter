@@ -33,7 +33,7 @@ const createTweetElement = function (tweetObj) {
       <i class="fa-solid fa-flag"></i></i>
   </div>
   </footer>`;
-  $newTweet.append($tweetContent);
+  $newTweet.prepend($tweetContent);
   return $newTweet;
 };
 
@@ -42,34 +42,39 @@ const renderTweets = function (data) {
   for (object of data) {
     // loop through all elements of array
     renderTweet = createTweetElement(object); // generate tweet container on each element
-    $(".tweet-container").append(renderTweet); // append each element to the tweet-container section on the webpage
+    $(".tweet-container").prepend(renderTweet); // append each element to the tweet-container section on the webpage
   }
   return renderTweet;
 };
 
 $(document).ready(function () {
   loadTweets();
-  $("form").submit(function (event) {
-    console.log(event.target);
+  $("#form").submit(function (event) {
+    const $plainText = $(this).children('div:first-child').children('textarea')
+    const characCounter = $plainText.val();
+    if (characCounter.length > 140 || characCounter === '') {
+      return alert('text too long or no text')
+    } 
     event.preventDefault();
     let dataString = $(this).serialize();
-
-    //do form validation HERE
-    console.log(dataString);
 
     $.ajax({
       type: "POST",
       url: "/tweets",
       data: dataString,
+      success: {success: "this is working now"},
     })
       .then(function () {
-        location.reload();
+        // location.reload();
         //dont use .reload instead research jquery.load()
+        // $('.tweet-container').empty();
+        loadTweets();
       })
       .catch((error) => {
         console.log('this is the error: ', error);
       });
   });
+  return false;
 });
 
 const loadTweets = function () {
@@ -77,8 +82,10 @@ const loadTweets = function () {
     type: "GET",
     url: "/tweets",
   }).then(function (ziggy) {
-    console.log(ziggy);
+    $('.tweet-container').empty();
     $(".tweet-container").prepend(renderTweets(ziggy));
+    $('.text-box').val('').empty();
+    $('.counter').val(140).trigger("reset");
   });
 };
 
