@@ -3,6 +3,7 @@
 **Tweeter is a simple, single-page Twitter clone created under the wonderful guidance of Lighthouse Lab Mentors. Thank you!!**
 
 The app features responsive design to be suited for both desktop view:
+
 ![Desktop version](https://github.com/ThnxZiggy/tweeter/blob/master/Docs/Tweeter%20Desktop.jpeg?raw=true)
 
 and mobile view:
