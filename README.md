@@ -6,6 +6,7 @@ The app features responsive design to be suited for both desktop view:
 ![Desktop version](https://github.com/ThnxZiggy/tweeter/blob/master/Docs/Tweeter%20Desktop.jpeg?raw=true)
 
 and mobile view:
+
 ![Mobile version](https://github.com/ThnxZiggy/tweeter/blob/master/Docs/Tweeter%20Mobile.jpeg?raw=true)
 
 ## Getting Started
