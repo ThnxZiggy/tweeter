@@ -5,6 +5,7 @@
   margin: 0.9em;
   font-family: 'Bungee', sans-serif;
 }
+
 .create-tweet {
   display: flex;
   font-family: 'Source Sans Pro', cursive, sans-serif;
@@ -12,10 +13,12 @@
   flex-direction: column;
 
 }
+
 button {
   background-color: rgb(19, 19, 179);
-  color:#FFFFFF;
+  color: #FFFFFF;
 }
+
 .example {
   margin: 0.9em
 }
@@ -24,11 +27,9 @@ button {
   display: flex;
   justify-content: space-between;
   margin-top: 1em;
-  /* font: 'Bungee', sans-serif; */
 }
 
 .text-box {
-  /* margin-top: 1em; */
   outline: none;
   border-bottom-width: thick;
   border-top-width: 0;
@@ -37,10 +38,6 @@ button {
   background-color: transparent;
   resize: none;
   padding: 0 0.9em;
-  /* border-color: #000000;
-  border-bottom: thick; */
-  
-    
 }
 
 ::placeholder {

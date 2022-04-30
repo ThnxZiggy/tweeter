@@ -5,13 +5,13 @@
  */
 
 //HTML safe function
-const safeHTML = function (str) {
+const safeHTML = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-const createTweetElement = function (tweetObj) {
+const createTweetElement = function(tweetObj) {
   let $newTweet = $("<article>").addClass("tweet");
   let $tweetContent = `<header>
   <div class="leftside">
@@ -37,7 +37,7 @@ const createTweetElement = function (tweetObj) {
   return $newTweet;
 };
 
-const renderTweets = function (data) {
+const renderTweets = function(data) {
   let renderTweet = null;
   for (object of data) {
     // loop through all elements of array
@@ -47,32 +47,33 @@ const renderTweets = function (data) {
   return renderTweet;
 };
 
-const loadTweets = function () {
+const loadTweets = function() {
   $.ajax({
     type: "GET",
     url: "/tweets",
-  }).then(function (ziggy) {
-    $('.tweet-container').empty();
+  }).then(function(ziggy) {
+    $(".tweet-container").empty();
     $(".tweet-container").prepend(renderTweets(ziggy));
-
   });
 };
 
 //generate page
-$(document).ready(function () {
+$(document).ready(function() {
   loadTweets();
   //hide error message
-  $('#error-Msg').hide();
-  $("#form").submit(function (event) {
+  $("#error-Msg").hide();
+  $("#form").submit(function(event) {
     event.preventDefault();
-    const characCounter = $('#tweet-text').val();
+    const characCounter = $("#tweet-text").val();
     //tweet validation
-    if (characCounter === '') {
-      $('#error-Msg').text('🚨🚨🚨Cannot🚨tweet🚨empty🚨string🚨🚨🚨').slideDown();
+    if (characCounter === "") {
+      $("#error-Msg")
+        .text("🚨🚨🚨Cannot🚨tweet🚨empty🚨string🚨🚨🚨")
+        .slideDown();
     } else if (characCounter.length > 140) {
-       $('#error-Msg').text('🚨🚨🚨Tweet🚨is🚨too🚨long🚨🚨🚨').slideDown();
+      $("#error-Msg").text("🚨🚨🚨Tweet🚨is🚨too🚨long🚨🚨🚨").slideDown();
       return false;
-    } 
+    }
     //store tweet as a string
     let dataString = $(this).serialize();
     //sending tweet data to /tweets object
@@ -80,30 +81,19 @@ $(document).ready(function () {
       type: "POST",
       url: "/tweets",
       data: dataString,
-      success: {success: "this is working now"},
+      success: { success: "this is working now" },
     })
-      //removing error msg (if applicable)
-      //reset box and counter
-      //generate tweet
-      .then(function () {
-        $('#error-Msg').slideUp();
-        $('.text-box').val('').empty();
-        $('.counter').val(140).trigger("reset");
-        loadTweets();
+
+      .then(function() {
+        $("#error-Msg").slideUp(); //removing error msg (if applicable)
+        $(".text-box").val("").empty(); //reset box and counter
+        $(".counter").val(140).trigger("reset");
+        loadTweets(); //generate tweet
       })
       .catch((error) => {
-        console.log('this is the error: ', error);
+        console.log("this is the error: ", error);
       });
   });
 
   return false;
 });
-
-
-
-// if ( $( "input" ).first().val()) {
-//   $( "span" ).text( "Validated..." ).show();
-//   return;
-// }
-
-// $( "span2" ).text( "Not valid!" ).show().fadeOut( 3000 );

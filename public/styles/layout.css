@@ -7,14 +7,18 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 /*
  * Global layout stuff
  */
- @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap');
+
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -35,10 +39,8 @@ nav {
 
 main {
   display: flex;
-  /* justify-content: space-evenly; */
   background-color: #f4f1ec;
   flex-direction: column;
-  /* width: 90% */
   margin: 0.9em;
   inline-size: auto;
 }
@@ -48,11 +50,12 @@ main {
     display: flex;
     flex-direction: row;
     resize: both;
-    overflow:auto;
+    overflow: auto;
     margin: 0.9em;
     inline-size: auto;
     justify-content: space-between;
   }
+
   main {
     margin-top: 120px;
   }

@@ -11,17 +11,16 @@
 
 .tweet:hover {
   box-shadow:
-  1.6px 1.6px 1.2px rgba(0, 0, 0, 0.17),
-  3.4px 3.4px 2.5px rgba(0, 0, 0, 0.134),
-  5.8px 5.8px 4.3px rgba(0, 0, 0, 0.117),
-  8.7px 8.7px 6.4px rgba(0, 0, 0, 0.105),
-  12.5px 12.5px 9.3px rgba(0, 0, 0, 0.095),
-  17.7px 17.7px 13.1px rgba(0, 0, 0, 0.085),
-  25.1px 25.1px 18.6px rgba(0, 0, 0, 0.075),
-  36.5px 36.5px 27px rgba(0, 0, 0, 0.065),
-  56.3px 56.3px 41.6px rgba(0, 0, 0, 0.053),
-  100px 100px 74px rgba(0, 0, 0, 0.036)
-;
+    1.6px 1.6px 1.2px rgba(0, 0, 0, 0.17),
+    3.4px 3.4px 2.5px rgba(0, 0, 0, 0.134),
+    5.8px 5.8px 4.3px rgba(0, 0, 0, 0.117),
+    8.7px 8.7px 6.4px rgba(0, 0, 0, 0.105),
+    12.5px 12.5px 9.3px rgba(0, 0, 0, 0.095),
+    17.7px 17.7px 13.1px rgba(0, 0, 0, 0.085),
+    25.1px 25.1px 18.6px rgba(0, 0, 0, 0.075),
+    36.5px 36.5px 27px rgba(0, 0, 0, 0.065),
+    56.3px 56.3px 41.6px rgba(0, 0, 0, 0.053),
+    100px 100px 74px rgba(0, 0, 0, 0.036);
 
 }
 
@@ -38,7 +37,7 @@ article.tweet header {
 }
 
 p.username {
-  color:#545149;
+  color: #545149;
 }
 
 article.tweet footer {
@@ -49,16 +48,13 @@ article.tweet footer {
   padding: 0 0.9em;
 }
 
-article.tweet footer > div {
-  /* margin: 1%; */
+article.tweet footer>div {
   font-size: medium;
   display: flex;
   align-self: space-around;
 }
 
 h4 {
-  /* display: flex; */
-  /* outline: none; */
   border-style: solid;
   border-bottom-width: thick;
   border-top-width: 0;
@@ -82,18 +78,17 @@ p {
   opacity: 0.35;
   font-weight: 600;
   display: flex;
-
 }
 
 #date-posted {
   font-size: medium;
 }
 
-.share > i:hover {
-  color:red;
+.share>i:hover {
+  color: red;
   cursor: pointer;
 }
 
-.share > i {
+.share>i {
   padding: 0 0.25em;
 }

@@ -11,13 +11,13 @@ nav {
   color: #FFFFFF;
   font-size: 24px;
   height: 120px;
-  z-index:100;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   position: fixed;
   width: 100%;
   top: 0;
-  
+
 }
 
 span {
@@ -25,16 +25,14 @@ span {
 }
 
 .write {
-  /* float: right; */
   margin: 1.5em;
-  /* align-self: flex-end; */
   font-family: 'Source Sans Pro', light, sans-serif;
 }
 
 .icon {
   display: flex;
-  color:#FF0000;
-  justify-content:center;
+  color: #FF0000;
+  justify-content: center;
 
   size: 0.75em;
 }
